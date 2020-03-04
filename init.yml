@@ -1,0 +1,25 @@
+---
+- hosts: k8s
+  remote_user: root
+  vars:
+    ready_env_pkg: 
+      - conntrack
+      - ntpdate
+      - ntp
+      - ipvsadm
+      - ipset
+      - jq
+      - iptables
+      - curl
+      - sysstat
+      - libseccomp
+      - wget
+      - vim
+      - net-tools
+      - git
+  
+  tasks:
+    - name: yum ready env
+      yum: name= "{{ ready_env_pkg }}"
+      
+      with_items: "{{ ready_env_pkg }}"
