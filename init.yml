@@ -8,7 +8,6 @@
       - ntp
       - ipvsadm
       - ipset
-      - jq
       - iptables
       - curl
       - sysstat
